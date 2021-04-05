@@ -1,0 +1,2 @@
+# AutoTrading
+DSAI HW2
