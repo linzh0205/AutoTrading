@@ -1,10 +1,11 @@
 # AutoTrading
 # DSAI HW2
+
 ## Method
 
-## data preprocessing
+## Data analysis
 
-## Model
+## Model training
 
 
 ## Run the code
