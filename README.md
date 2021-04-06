@@ -25,5 +25,5 @@ conda install --yes --file requirements.txt
 
 輸入以下指令:
 ```
-python trader.py --training training.csv -- testing testing.csv --output output.csv
+python trader.py --training training.csv --testing testing.csv --output output.csv
 ```
