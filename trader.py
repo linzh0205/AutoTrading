@@ -77,7 +77,7 @@ if __name__ == '__main__':
     # predicted stock price
     predicted_stock_price = regressor(X_train,y_train).predict(X_test)
     predicted_stock_price = sc.inverse_transform(predicted_stock_price)
-    print(predicted_stock_price[:19])
+    
 
 
     # with open(args.output, 'w') as output_file:
