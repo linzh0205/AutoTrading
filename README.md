@@ -1,7 +1,13 @@
 # AutoTrading
-DSAI HW2
+# DSAI HW2
+## Method
 
-## Run the code ##
+## data preprocessing
+
+## Model
+
+
+## Run the code
 環境
 Python 3.7.1
 ```
