@@ -34,7 +34,7 @@ activate test
 ```
 conda install --yes --file requirements.txt
 ```
-將app.py、train.csv、test.csv、submission.csv載下後(需在同資料夾內)
+將trader.py、training.csv、testing testing.csv、output.csv載下後(需在同資料夾內)
 
 輸入以下指令:
 ```
