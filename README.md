@@ -2,23 +2,27 @@
 # DSAI HW2
 
 ## Data analysis
-   擷取出close、open、high、low的資料並將其可視化，可以發現close、open之間存在延遲一天的關係。
+   擷取出close、open、high、low的資料並將其可視化。
    
-   training data 中close、open、high、low趨勢圖
+   training data 中close、open、high、low趨勢圖:
    
    ![4line](https://github.com/linzh0205/AutoTrading/blob/main/plot/4line.jpeg)
    
    
-   testing data 中 close、open趨勢圖
+   testing data 中 close、open趨勢圖:
    
    ![close_open](https://github.com/linzh0205/AutoTrading/blob/main/plot/Figure_1.png)
    
-   因此使用close、open作為模型訓練的特徵。
+   由上圖可以發現close、open之間存在延遲一天的關係故兩者具有一定的關係存在，因此將使用close、open作為模型訓練的特徵。
    
 ## Method & Model training
    由上述資料分析後選擇close、open作為特徵，並以常用於預測時間序列資料的模型LSTM作為此次的訓練模型。
    
    需要預測20天的股票開盤價，因此在訓練資料中以每20筆資料預測1筆的方式去做模型的訓練。
+   
+   LSTM Model Summary:
+   
+   ![LSTM](https://github.com/linzh0205/AutoTrading/blob/main/plot/LSTM.JPG)
    
 ## Trader Strategy
    判斷目前股票數量為0、1或-1，並以買入之收盤價與預測收盤價比較，以此為依據判斷動作為買、賣、持有
