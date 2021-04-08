@@ -5,10 +5,12 @@
    擷取出close、open、high、low的資料並將其可視化，可以發現close、open之間存在延遲一天的關係。
    
    training data 中close、open、high、low趨勢圖
+   
    ![4line](https://github.com/linzh0205/AutoTrading/blob/main/plot/4line.jpeg)
    
    
    testing data 中 close、open趨勢圖
+   
    ![close_open](https://github.com/linzh0205/AutoTrading/blob/main/plot/Figure_1.png)
    
    因此使用close、open作為模型訓練的特徵。
