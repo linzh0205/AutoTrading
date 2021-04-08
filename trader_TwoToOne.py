@@ -2,11 +2,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import keras
-from tensorflow.keras import regularizers
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import LSTM
 from keras.layers import Dropout,BatchNormalization
+from tensorflow.keras import regularizers
 from sklearn.preprocessing import MinMaxScaler 
 
 
@@ -24,12 +24,18 @@ def regressor(X_train,y_train):
     # regressor.fit(X_train, y_train, epochs = 80, batch_size = 32)
     keras.backend.clear_session()
     regressor = Sequential()
-    # regressor.add(LSTM(units = 16 ,input_shape = (X_train.shape[1], 2)), stateful = True)
+    regressor.add(LSTM(units = 16,kernel_regularizer=regularizers.l1_l2(l1=0, l2=0.01),
+                    bias_regularizer=regularizers.l2(0.01),
+                    activity_regularizer=regularizers.l2(0.01),
+                    input_shape = (X_train.shape[1], 2)))
+    
     # batch_input_shape=(batch_size, timesteps, data_dim)
-    regressor.add(Dense(units = 16, batch_input_shape=(batch_size, timesteps, data_dim) , stateful = True))
+    # regressor.add(Dense(units = 16, batch_input_shape=(batch_size, timesteps, data_dim) , stateful = True))
     # regressor.add(Dense(units = 1 , kernel_regularizers = regularizers.l1_l2(l1 = 0, l2 = 0.01) ,
     #                     bias_regularizer = regularizers.l2(0.01), activity_regularizer= regularizers.l2(0.01)))
-    regressor.add(Dense(units = 1))
+    regressor.add(Dense(units = 1,kernel_regularizer=regularizers.l1_l2(l1= 0, l2=0.01),
+                        bias_regularizer=regularizers.l2(0.01),
+                        activity_regularizer=regularizers.l2(0.01)))
 
     regressor.compile(optimizer = 'adam', loss = 'mean_squared_error')
     regressor.fit(X_train, y_train, epochs = 300, batch_size = 8)
@@ -58,7 +64,7 @@ if __name__ == '__main__':
 
     # load_data
     training_data = pd.read_csv(args.training,  header = None)      #(1258, 4)
-    testing_data = pd.read_csv(args.testing, header = None)         #(250, 4)
+    testing_data = pd.read_csv(args.testing, header = None)         #(20, 4)
     training_data = pd.concat([training_data, testing_data], ignore_index = True, axis = 0)   #(1508, 4)
 
 
