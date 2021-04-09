@@ -26,7 +26,7 @@
    
    Predict Result:
    
-   ![result](https://github.com/linzh0205/AutoTrading/blob/main/plot/)
+   ![result](https://github.com/linzh0205/AutoTrading/blob/main/plot/result.png)
    
 ## Trader Strategy
    判斷目前股票數量為0、1或-1，並以買入之收盤價與預測收盤價比較，以此為依據判斷動作為買、賣、持有
