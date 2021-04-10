@@ -23,7 +23,7 @@ class Action():
                 self.action.append(0)
             else:
                 if self.stock == 1:
-                    if prices[i + 1] >= self.hold + 0.4:        #sell condiction +0.4
+                    if prices[i + 1] >= self.hold + 0:        #sell condiction +0
                         self.hold = 0
                         self.action.append(-1)
                         self.stock -= 1
@@ -43,7 +43,7 @@ class Action():
                         self.action.append(0)
 
                 elif self.stock == -1:
-                    if prices[i + 1] <= self.hold - 0.4:        #buy condiction -0.4
+                    if prices[i + 1] <= self.hold - 0:        #buy condiction -0
                         self.hold = 0                     
                         self.action.append(1)
                         self.stock += 1
