@@ -160,7 +160,6 @@ if __name__ == '__main__':
     plt.legend()
     plt.show()
 
-    print(predicted_stock_price)
     with open(args.output, 'w') as output_file:
         for i in range(len(action)):
             output_file.writelines(str(action[i])+"\n")
